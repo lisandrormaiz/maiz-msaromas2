@@ -6,7 +6,7 @@
 
 .quantity-buttom {
     color:white;
-    background-color:#BE1931;
+    background-color:#197cbe;
     border-radius:5px;
     border-style:none;
     padding:10px;
@@ -14,17 +14,17 @@
 }
 
 .quantity-buttom:disabled {
-    background-color:#d68c97;
+    background-color:#197cbe;
 }
 
 .quantity-display {
-    color:#BE1931;
+    color:#197cbe;
     padding:10px;
     margin:5px 30px 5px 30px;
 }
 
 .quantity-add {
-    color:#BE1931;
+    color:#197cbe;
     background-color:lightgray;
     border-radius:5px;
     border-style:none;
@@ -33,7 +33,7 @@
 
 .purchase-buttom {
     color:white;
-    background-color:#BE1931;
+    background-color:#197cbe;
     border-radius:5px;
     border-style:none;
     padding:10px;

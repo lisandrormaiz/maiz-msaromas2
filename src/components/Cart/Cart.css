@@ -6,8 +6,8 @@
     margin:10px;
     padding:15px;
     border-radius:20px;
-    border-style:dotted;
-    border-color:#df5166;
+    border-style: groove;
+    border-color:#197cbe;
 }
 
 .not-filled-cart {
@@ -20,7 +20,7 @@
 }
 
 .remove-cart, .go-to-home, .remove-item {
-    color:#BE1931;
+    color:#197cbe;
     background-color:lightgray;
     border-radius:5px;
     border-style:none;
@@ -33,7 +33,7 @@
 
 .go-to-home:hover {
     text-decoration:none;
-    color:#df5166;
+    color:#197cbe;
 }
 
 
@@ -108,11 +108,11 @@
 .item-added-quantity{
     font-size:20px;
     font-weight:bold;
-    color:#BE1931;
+    color:#197cbe;
 }
 
 .cart-total {
     font-size:22px;
     font-weight:bold;
-    color:#BE1931;
+    color:#197cbe;
 }
