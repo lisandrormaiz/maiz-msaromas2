@@ -1,0 +1,9 @@
+.item-list-container {
+    padding:20px;
+}
+
+.loading {
+    margin-top:20px;
+    font-size:18px;
+    color:#BE1931;
+}

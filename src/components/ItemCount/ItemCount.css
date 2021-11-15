@@ -1,0 +1,40 @@
+.quantity-selectors {
+    display:flex;
+    justify-content:center;
+    padding:20px;
+}
+
+.quantity-buttom {
+    color:white;
+    background-color:#BE1931;
+    border-radius:5px;
+    border-style:none;
+    padding:10px;
+    margin:5px 30px 5px 30px;
+}
+
+.quantity-buttom:disabled {
+    background-color:#d68c97;
+}
+
+.quantity-display {
+    color:#BE1931;
+    padding:10px;
+    margin:5px 30px 5px 30px;
+}
+
+.quantity-add {
+    color:#BE1931;
+    background-color:lightgray;
+    border-radius:5px;
+    border-style:none;
+    padding:10px;
+}
+
+.purchase-buttom {
+    color:white;
+    background-color:#BE1931;
+    border-radius:5px;
+    border-style:none;
+    padding:10px;
+}

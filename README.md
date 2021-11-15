@@ -1,10 +1,31 @@
-# Getting Started with Create React App
+# Madreselva Aromas 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Madreselva Aromas is an enterprise based on teamwork with the aim of finding the ideal aroma for each moment of our lives. The most prominent products are diffusers, textile and car perfumes.
 
-## Available Scripts
+You can see a version at https://dazzling-aryabhata-7bcc6b.netlify.app
 
-In the project directory, you can run:
+To clone this repository you must follow the following instructions:
+
+1 - Open the Visual Studio Code
+
+2 - Change the current working directory to the location where you want to clone the directory.
+
+3 - Type git clone and then paste the following URL https://github.com/lisandrormaiz/maiz-msaromas.git
+
+4 - Press Enter to create your local clone.
+
+For more information: https://docs.github.com/es/repositories/creating-and-managing-repositories/cloning-a-repository
+
+Accessories
+Once the repository has been cloned, for the project to run correctly, the following libraries must be installed:
+
+react-router.dom: It is a library that allows us to route and navigate between the different components of our SPA. To install it, the following must be executed in the terminal:
+
+npm install react-router-dom
+• Sweet Alert to get a nice alert style
+
+npm install sweetalert --save
 
 ### `npm start`
 

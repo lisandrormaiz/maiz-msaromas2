@@ -1,0 +1,18 @@
+.cartwidget-container {
+    text-decoration:none;
+}
+
+.cartwidget {
+    background-color:white;
+    padding:15px;
+    border-radius:20px;
+    border-style:none;
+    display:flex;
+    flex-direction:row;
+}
+
+.cartwidget-quantity {
+    color:#BE1931;
+    font-size:18;
+    padding:5px;
+}

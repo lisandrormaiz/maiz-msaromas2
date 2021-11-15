@@ -1,0 +1,24 @@
+@media (max-width:480px) {
+
+    .item-container {
+        display:grid;
+        grid-template-columns:1fr;
+        justify-content:center;
+        align-items:center;
+    }
+
+    .item-container:first-child {
+        margin-top:25px;
+    }
+}
+
+@media (min-width:481px) {
+
+    .item-container {
+        display:grid;
+        grid-template-columns:1fr 1fr 1fr;
+        gap:15px;
+        margin-top:25px;
+        padding:10px;
+    }
+}
