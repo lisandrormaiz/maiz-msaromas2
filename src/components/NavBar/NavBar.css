@@ -1,6 +1,8 @@
 .navbar {
-    background-color:lightgray;
+    background-color:white;
     padding:20px;
+    display: flex;
+    justify-content: space-between;
 }
 
 nav ul {
@@ -34,7 +36,7 @@ nav ul li {
     }
 
     nav ul li {
-        padding-top:7px;
+        padding-top:10px;
     }
 }
 
@@ -43,6 +45,7 @@ nav ul li {
     .navbar {
         display:flex;
         flex-direction:row;
+        justify-content: space-between;
     }
 
     nav ul li {
@@ -54,10 +57,10 @@ nav ul li {
 nav ul li a {
     text-transform:uppercase;
     text-decoration:none;
-    color:#BE1931;
+    color:#197cbe;
 }
 
 nav ul li a:hover {
     text-decoration:none;
-    color:#df5166;
+    color:#516bdf;
 }
