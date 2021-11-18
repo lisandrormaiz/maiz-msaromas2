@@ -3,7 +3,6 @@ import {useParams} from 'react-router-dom';
 import {getFirestore} from '../../services/GetFirestore';
 import ItemList from '../ItemList/ItemList';
 import './ItemListContainer.css';
-import swal from 'sweetalert';
 
 const ItemListContainer = () => {
 
@@ -18,21 +17,21 @@ const ItemListContainer = () => {
         
         if (categoryId) {
 
-            const dataBaseQuery = dataBase.collection("items").where("category", "==", categoryId).get()
+            const dataBaseByCategory= dataBase.collection("items").where("category", "==", categoryId).get()
 
-            dataBaseQuery
+            dataBaseByCategory
             .then(response => setItemList(response.docs.map(item => ({id:item.id, ...item.data()}))))
-            .catch (error => swal("Error:", error))
+            .catch (error => alert("Error:", error))
             .finally(()=> setLoading(false))
         }
 
         else {
 
-            const dataBaseQuery = dataBase.collection("items").orderBy("category").get()
+            const totalDataBase = dataBase.collection("items").orderBy("category").get()
 
-            dataBaseQuery
+            totalDataBase
             .then(response => setItemList(response.docs.map(item => ({id:item.id, ...item.data()}))))
-            .catch (error => swal("Error:", error))
+            .catch (error => alert("Error:", error))
             .finally(()=> setLoading(false))
         } 
 
@@ -41,7 +40,7 @@ const ItemListContainer = () => {
     return (
             <div className="item-list-container">
                 {loading
-                ? <h2 className="loading">Cargando</h2>
+                ? <h2 className="loading">Los productos se están cargando</h2>
                 : <ItemList itemList={itemList}/>
                 }
             </div>

@@ -2,7 +2,6 @@ import {useEffect, useState} from 'react';
 import {useParams} from 'react-router-dom';
 import {getFirestore} from '../../services/GetFirestore';
 import ItemDetail from '../ItemDetail/ItemDetail';
-import swal from 'sweetalert';
 
 const ItemDetailContainer = () => {
 
@@ -15,11 +14,9 @@ const ItemDetailContainer = () => {
 
         const dataBase = getFirestore()
 
-        const dataBaseQuery = dataBase.collection("items").doc(itemId).get()
-
-        dataBaseQuery
+        dataBase.collection("items").doc(itemId).get()
         .then(item => setItemDetail({id:item.id, ...item.data()}))
-        .catch (error => swal("Error:", error))
+        .catch (error => alert("Error:", error))
         .finally(()=> setLoading(false))
 
     },[itemId])
@@ -27,7 +24,7 @@ const ItemDetailContainer = () => {
     return (
             <div>
                 {loading
-                ? <h2 className="loading">Cargando</h2>
+                ? <h2 className="loading">El detalle del producto se está cargando</h2>
                 : <ItemDetail itemDetail={itemDetail}/>
                 }
             </div>

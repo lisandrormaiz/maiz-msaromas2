@@ -1,19 +1,82 @@
+import {useState} from 'react';
 import {useCartContext} from '../../context/CartContext';
-import {Link} from "react-router-dom";import './Cart.css'; 
+import {getFirestore} from '../../services/GetFirestore';
+import {Link} from 'react-router-dom';
+import firebase from 'firebase/app';
+import 'firebase/firestore';
+import './Cart.css'; 
 
 const Cart = () => {
     
-    const {cartList, removeItem, removeCart, cartTotal} = useCartContext()
+    const [orderId, setOrderId] = useState("");
+    const [userForm, setUserForm] = useState({name:"", surname:"", phone:"", email:""});
+    const {cartList, removeItem, removeCart, cartTotal} = useCartContext();
+
+    const createOrder = (e) => {
+
+        e.preventDefault()
+
+        let order = {}
+        order.date = firebase.firestore.Timestamp.fromDate(new Date());
+        order.buyer = userForm;
+        order.total = cartTotal;
+        order.items = cartList.map(itemAdded => {
+            const id = itemAdded.itemDetail.id;
+            const title = itemAdded.itemDetail.title;
+            const subtotal = itemAdded.itemDetail.price * itemAdded.quantity;
+            return {id, title, subtotal}
+        })
+
+        const dataBase = getFirestore()
+
+        dataBase.collection("orders").add(order)
+        .then(response => setOrderId(response.id))
+        .catch (error => alert("Error:", error))
+        .finally(() => removeCart())
+
+        const updateStock = dataBase.collection("items").where
+        (firebase.firestore.FieldPath.documentId(), "in", cartList.map(idToUpdate => idToUpdate.itemDetail.id))
+
+        const batch = dataBase.batch();
+
+        updateStock.get()
+        .then(response => {
+            response.docs.forEach(docSnapshot => {
+                batch.update(docSnapshot.ref, {
+                stock: docSnapshot.data().stock - cartList.find(idToUpdate => idToUpdate.itemDetail.id === docSnapshot.id).quantity
+                })
+            })
+        
+        batch.commit()
+            .then(response => {console.log("Stock actualizado", response)
+            })
+        })
+    }
+
+    const handleChange = (e) => {
+        setUserForm({
+            ...userForm, 
+            [e.target.name]: e.target.value
+        })
+    }
 
     return (
+
         <div>
             {cartList.length
-            ? <button className="remove-cart" onClick={() => removeCart()}>Vaciar carro</button>
-            : <div>
-                <p className="empty-cart">El carro está vacío</p>
-                <Link className="go-to-home" to="/"> Volver al home</Link>
-            </div>
+            ? <button className="remove-cart" onClick={() => removeCart()}>Vaciar carrito</button>
+            : orderId===""
+                ? <div>
+                <p className="empty-cart">El carrito está vacío</p>
+                <Link className="go-to-home" to="/"> Ir al inicio</Link>
+                </div>
+                : <div>
+                <p className="empty-cart">¡Gracias por tu compra!</p>
+                <p className="order-id">Tu código de operación es: {orderId}</p>
+                <Link className="go-to-home" to="/"> Ir al inicio</Link>
+                </div>
             }
+            
             <div className=
                 {cartList.length
                 ? "filled-cart"
@@ -36,8 +99,29 @@ const Cart = () => {
                     </div>
                 )}
                 <div>
-                    <p className="cart-total">Total: $ {cartTotal}</p>
+                    <p className="cart-total">Total de la compra: $ {cartTotal}</p>
                 </div>
+                <form onSubmit={createOrder} onChange={handleChange}>
+                    <legend className="form-legend">Ingresá tus datos</legend>
+                    <div>
+                        <label htmlFor="name" className="form-label">Nombre</label>
+                        <input type="text" name="name" placeholder="Juan" value={userForm.name}/>
+                    </div>
+                    <div>
+                        <label htmlFor="surname" className="form-label">Apellido</label>
+                        <input type="text" name="surname" placeholder="Pérez" value={userForm.surname}/>
+                    </div>
+                    <div>
+                        <label htmlFor="phone" className="form-label">Teléfono</label>
+                        <input type="text" name="phone" placeholder="3492123456" value={userForm.phone}/> 
+                        <p>Ingresá tu número de celular con el código de área, sin el 0 ni el 15.</p>
+                    </div>
+                    <div>
+                        <label htmlFor="email" className="form-label">Email</label>
+                        <input type="email" name="email" placeholder="ejemplo@tuemail.com" value={userForm.email}/>
+                    </div>
+                    <button className="buy-buttom">¡Comprar!</button>
+                </form>
             </div>
         </div>
     )
