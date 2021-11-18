@@ -116,3 +116,19 @@
     font-weight:bold;
     color:#197cbe;
 }
+
+.buy-buttom {
+    color:white;
+    background-color:#194dbe;
+    border-radius:5px;
+    border-style:none;
+    margin-top:10px;
+    padding:10px;
+}
+
+.form-label{
+    margin-right:5px;
+}
+
+.order-id {    
+    color:#194dbe;}

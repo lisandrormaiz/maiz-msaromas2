@@ -64,14 +64,14 @@ const Cart = () => {
 
         <div>
             {cartList.length
-            ? <button className="remove-cart" onClick={() => removeCart()}>Vaciar carrito</button>
+            ? <button className="remove-cart" onClick={() => removeCart()}>Vaciar carro</button>
             : orderId===""
                 ? <div>
-                <p className="empty-cart">El carrito está vacío</p>
-                <Link className="go-to-home" to="/"> Ir al inicio</Link>
+                <p className="empty-cart">Su carro está vacío</p>
+                <Link className="go-to-home" to="/"> Ir al Home</Link>
                 </div>
                 : <div>
-                <p className="empty-cart">¡Gracias por tu compra!</p>
+                <p className="empty-cart">Gracias por su compra!</p>
                 <p className="order-id">Tu código de operación es: {orderId}</p>
                 <Link className="go-to-home" to="/"> Ir al inicio</Link>
                 </div>
@@ -105,22 +105,21 @@ const Cart = () => {
                     <legend className="form-legend">Ingresá tus datos</legend>
                     <div>
                         <label htmlFor="name" className="form-label">Nombre</label>
-                        <input type="text" name="name" placeholder="Juan" value={userForm.name}/>
+                        <input type="text" name="name" placeholder="Nombre" value={userForm.name}/>
                     </div>
                     <div>
                         <label htmlFor="surname" className="form-label">Apellido</label>
-                        <input type="text" name="surname" placeholder="Pérez" value={userForm.surname}/>
+                        <input type="text" name="surname" placeholder="Apellido" value={userForm.surname}/>
                     </div>
                     <div>
                         <label htmlFor="phone" className="form-label">Teléfono</label>
-                        <input type="text" name="phone" placeholder="3492123456" value={userForm.phone}/> 
-                        <p>Ingresá tu número de celular con el código de área, sin el 0 ni el 15.</p>
+                        <input type="text" name="phone" placeholder="Teléfono sin el 0 y sin el 15" value={userForm.phone}/> 
                     </div>
                     <div>
                         <label htmlFor="email" className="form-label">Email</label>
-                        <input type="email" name="email" placeholder="ejemplo@tuemail.com" value={userForm.email}/>
+                        <input type="email" name="email" placeholder="Mail" value={userForm.email}/>
                     </div>
-                    <button className="buy-buttom">¡Comprar!</button>
+                    <button className="buy-buttom">Comprar</button>
                 </form>
             </div>
         </div>
