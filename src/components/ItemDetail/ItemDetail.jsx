@@ -3,6 +3,7 @@ import ItemCount from '../ItemCount/ItemCount';
 import {useCartContext} from '../../context/CartContext';
 import './ItemDetail.css'; 
 
+
 const ItemDetail = ({itemDetail}) => {
     
     const [quantity, setQuantity] = useState (1);

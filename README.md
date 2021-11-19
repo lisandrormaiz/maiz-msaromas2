@@ -17,6 +17,33 @@ To clone this repository you must follow the following instructions:
 
 For more information: https://docs.github.com/es/repositories/creating-and-managing-repositories/cloning-a-repository
 
+This site use Reactstrap:
+Reactstrap is a React component library for Bootstrap
+Reactstrap is currently compatible with Bootstrap 5.1. If you are using Bootstrap 4, you'll need to use Reactstrap v8
+
+Getting Started
+Install Reactstrap:
+npm install reactstrap react react-dom
+Copy
+Reactstrap currently requires React 16.8 or higher.
+
+Include Bootstrap
+Either:
+
+Import Bootstrap in your application code:
+npm install --save bootstrap
+Copy
+import 'bootstrap/dist/css/bootstrap.min.css';
+Copy
+or include Bootstrap from a CDN URL in your HTML layout:
+<head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" />
+</head>
+Copy
+Import components:
+import React from 'react';
+import { Button } from 'reactstrap';
+
 Accessories
 Once the repository has been cloned, for the project to run correctly, the following libraries must be installed:
 

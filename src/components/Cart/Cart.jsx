@@ -5,6 +5,7 @@ import {Link} from 'react-router-dom';
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 import './Cart.css'; 
+import {Button, Label, Form, Input} from "reactstrap";
 
 const Cart = () => {
     
@@ -64,7 +65,7 @@ const Cart = () => {
 
         <div>
             {cartList.length
-            ? <button className="remove-cart" onClick={() => removeCart()}>Vaciar carro</button>
+            ? <Button color="warning" outline onClick={() => removeCart()}>Vaciar carro</Button>
             : orderId===""
                 ? <div>
                 <p className="empty-cart">Su carro está vacío</p>
@@ -94,33 +95,33 @@ const Cart = () => {
                             <p className="item-added-quantity">Cantidad: {itemAdded.quantity}</p>
                         </div>
                         <div>
-                            <button className="remove-item" onClick={() => removeItem(itemAdded.itemDetail.id)}>Eliminar producto</button>
+                            <Button color="danger" outline onClick={() => removeItem(itemAdded.itemDetail.id)}>Eliminar producto</Button>
                         </div>
                     </div>
                 )}
                 <div>
                     <p className="cart-total">Total de la compra: $ {cartTotal}</p>
                 </div>
-                <form onSubmit={createOrder} onChange={handleChange}>
+                <Form onSubmit={createOrder} onChange={handleChange}>
                     <legend className="form-legend">Ingresá tus datos</legend>
                     <div>
-                        <label htmlFor="name" className="form-label">Nombre</label>
-                        <input type="text" name="name" placeholder="Nombre" value={userForm.name}/>
+                        <Label htmlFor="name" className="form-Label">Nombre</Label>
+                        <Input type="text" name="name" placeholder="Nombre" value={userForm.name}/>
                     </div>
                     <div>
-                        <label htmlFor="surname" className="form-label">Apellido</label>
-                        <input type="text" name="surname" placeholder="Apellido" value={userForm.surname}/>
+                        <Label htmlFor="surname" className="form-Label">Apellido</Label>
+                        <Input type="text" name="surname" placeholder="Apellido" value={userForm.surname}/>
                     </div>
                     <div>
-                        <label htmlFor="phone" className="form-label">Teléfono</label>
-                        <input type="text" name="phone" placeholder="Teléfono sin el 0 y sin el 15" value={userForm.phone}/> 
+                        <Label htmlFor="phone" className="form-Label">Teléfono</Label>
+                        <Input type="text" name="phone" placeholder="Teléfono sin el 0 y sin el 15" value={userForm.phone}/> 
                     </div>
                     <div>
-                        <label htmlFor="email" className="form-label">Email</label>
-                        <input type="email" name="email" placeholder="Mail" value={userForm.email}/>
+                        <Label htmlFor="email" className="form-Label">Email</Label>
+                        <Input type="email" name="email" placeholder="Mail" value={userForm.email}/>
                     </div>
-                    <button className="buy-buttom">Comprar</button>
-                </form>
+                    <Button type="submit" variant="success">Comprar</Button>
+                </Form>
             </div>
         </div>
     )
