@@ -1,6 +1,6 @@
 import {Link} from "react-router-dom";
 import './Item.css'; 
-import {Button, Card} from "reactstrap";
+import {Button} from "reactstrap";
 
 const Item = ({item}) => {
     
