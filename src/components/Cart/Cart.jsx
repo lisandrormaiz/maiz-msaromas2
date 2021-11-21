@@ -49,8 +49,7 @@ const Cart = () => {
             })
         
         batch.commit()
-            .then(response => {console.log("Stock actualizado", response)
-            })
+        .catch (error => alert("Error:", error))
         })
     }
 
