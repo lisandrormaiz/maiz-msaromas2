@@ -1,5 +1,19 @@
 .loading {
     margin-top:20px;
     font-size:18px;
-    color:#197cbe;
+    color:#000;
+    animation: myAnim 2s ease 0s 1 normal forwards;
 }
+
+@keyframes myAnim {
+    0%,
+    50%,
+    100% {
+      opacity: 1;
+    }
+  
+    25%,
+    75% {
+      opacity: 0;
+    }
+  }

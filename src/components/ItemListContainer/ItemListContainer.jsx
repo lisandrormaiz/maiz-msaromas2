@@ -40,7 +40,7 @@ const ItemListContainer = () => {
     return (
             <div className="item-list-container">
                 {loading
-                ? <h2 className="loading">Los productos se están cargando</h2>
+                ? <h2 className="loading">Cargando</h2>
                 : <ItemList itemList={itemList}/>
                 }
             </div>
