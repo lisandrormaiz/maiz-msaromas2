@@ -18,23 +18,10 @@
 }
 
 .quantity-display {
-    color:#197cbe;
+    color:#000;
     padding:10px;
     margin:5px 30px 5px 30px;
 }
 
-.quantity-add {
-    color:#197cbe;
-    background-color:lightgray;
-    border-radius:5px;
-    border-style:none;
-    padding:10px;
-}
 
-.purchase-buttom {
-    color:white;
-    background-color:#197cbe;
-    border-radius:5px;
-    border-style:none;
-    padding:10px;
-}
+

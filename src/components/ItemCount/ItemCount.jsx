@@ -1,5 +1,6 @@
 import {useState} from 'react';
 import {Link} from "react-router-dom";
+import { Button } from 'reactstrap';
 import './ItemCount.css';
 
 const ItemCount = ({initial, stock, addToCart}) =>{
@@ -22,13 +23,13 @@ const ItemCount = ({initial, stock, addToCart}) =>{
     return (
         <div className="quantity-container">
             <div className="quantity-selectors">
-                <button className="quantity-buttom"onClick={decreaseQuantity} disabled={(quantity<=initial) ? true : false}>-</button>
+                <Button  color="success" outline onClick={decreaseQuantity} disabled={(quantity<=initial) ? true : false}>-</Button>
                 <div className="quantity-display">{quantity}</div>
-                <button className="quantity-buttom" onClick={increaseQuantity} disabled={(quantity>=stock) ? true : false}>+</button>
+                <Button  color="success" outline onClick={increaseQuantity} disabled={(quantity>=stock) ? true : false}>+</Button>
             </div>
             {changeButtom 
-            ? <Link to="/cart"><button className="purchase-buttom">Finalizar compra</button></Link>
-            : <button className="quantity-add" onClick={addToCartHandler}>Agregar al carrito</button>
+            ? <Link to="/cart"><Button  color="success" outline>Finalizar compra</Button></Link>
+            : <Button  color="success" outline onClick={addToCartHandler}>Agregar al carro</Button>
             }
         </div>
     )

@@ -68,12 +68,13 @@ const Cart = () => {
             : orderId===""
                 ? <div>
                 <p className="empty-cart">Su carro está vacío</p>
-                <Link className="go-to-home" to="/"> Ir al Home</Link>
+                <Link to="/"><Button color="info" outline>Home</Button></Link>
                 </div>
                 : <div>
                 <p className="empty-cart">Gracias por su compra!</p>
                 <p className="order-id">Tu código de operación es: {orderId}</p>
-                <Link className="go-to-home" to="/"> Ir al inicio</Link>
+                <p className="empty-cart">Envianos el código por whatsapp al 2494497238 para coordinar la entrega</p>
+                <Link to="/"><Button color="info" outline>Home</Button></Link>
                 </div>
             }
             
@@ -119,7 +120,7 @@ const Cart = () => {
                         <Label htmlFor="email" className="form-Label">Email</Label>
                         <Input type="email" name="email" placeholder="Mail" value={userForm.email}/>
                     </div>
-                    <Button type="submit" variant="success">Comprar</Button>
+                    <Button color="success" outline>Comprar</Button>
                 </Form>
             </div>
         </div>

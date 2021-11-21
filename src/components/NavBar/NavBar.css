@@ -3,6 +3,7 @@
     padding:20px;
     display: flex;
     justify-content: space-between;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
 }
 
 nav ul {
@@ -56,11 +57,13 @@ nav ul li {
 
 nav ul li a {
     text-transform:uppercase;
+    letter-spacing: 5px;
+    font-size: large;
     text-decoration:none;
-    color:#197cbe;
+    color:#000;
 }
 
 nav ul li a:hover {
     text-decoration:none;
-    color:#516bdf;
+    color:#000;
 }
