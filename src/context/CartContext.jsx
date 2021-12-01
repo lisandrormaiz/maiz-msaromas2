@@ -9,6 +9,7 @@ const CartContextProvider = ({children}) => {
     const [itemQuantity, setItemQuantity] = useState(0);
     const [cartTotal, setCartTotal] = useState(0);
     const [cartList, setCartList] = useState([]);
+    
 
     const addToCartList = itemAdded => {
         setItemQuantity(itemQuantity + itemAdded.quantity)
@@ -36,6 +37,7 @@ const CartContextProvider = ({children}) => {
         setCartList([])
     }
 
+  
     return (
         <CartContext.Provider value={{cartList, addToCartList, removeItem, removeCart, itemQuantity, cartTotal}}>
             {children}

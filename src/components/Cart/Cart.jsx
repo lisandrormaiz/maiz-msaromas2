@@ -106,19 +106,19 @@ const Cart = () => {
                     <legend className="form-legend">Ingresá tus datos</legend>
                     <div>
                         <Label htmlFor="name" className="form-Label">Nombre</Label>
-                        <Input type="text" name="name" placeholder="Nombre" value={userForm.name}/>
+                        <Input type="text" name="name" placeholder="Nombre" />
                     </div>
                     <div>
                         <Label htmlFor="surname" className="form-Label">Apellido</Label>
-                        <Input type="text" name="surname" placeholder="Apellido" value={userForm.surname}/>
+                        <Input type="text" name="surname" placeholder="Apellido" />
                     </div>
                     <div>
                         <Label htmlFor="phone" className="form-Label">Teléfono</Label>
-                        <Input type="text" name="phone" placeholder="Teléfono sin el 0 y sin el 15" value={userForm.phone}/> 
+                        <Input type="text" name="phone" placeholder="Teléfono sin el 0 y sin el 15" /> 
                     </div>
                     <div>
                         <Label htmlFor="email" className="form-Label">Email</Label>
-                        <Input type="email" name="email" placeholder="Mail" value={userForm.email}/>
+                        <Input type="email" name="email" placeholder="Mail" />
                     </div>
                     <Button color="success" outline>Comprar</Button>
                 </Form>

@@ -22,6 +22,7 @@ Reactstrap is a React component library for Bootstrap
 Reactstrap is currently compatible with Bootstrap 5.1. If you are using Bootstrap 4, you'll need to use Reactstrap v8
 
 Getting Started
+npm install react-router-dom for web (5.2)
 Install Reactstrap:
 npm install reactstrap react react-dom
 Copy
